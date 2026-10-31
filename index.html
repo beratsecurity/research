@@ -1,0 +1,21 @@
+---
+layout: default
+title: Research
+---
+<section class="intro">
+  <h1>Research</h1>
+  <p>{{ site.description }}</p>
+</section>
+
+<ul class="list">
+  {% for post in site.posts %}
+  <li>
+    <a class="list-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="list-meta">{{ post.date | date: '%d.%m.%Y' }}</span>
+    {% if post.description %}<p class="list-desc">{{ post.description }}</p>{% endif %}
+  </li>
+  {% endfor %}
+  {% if site.posts.size == 0 %}
+  <li><p class="list-desc">Henüz araştırma yok.</p></li>
+  {% endif %}
+</ul>
